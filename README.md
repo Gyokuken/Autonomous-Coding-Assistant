@@ -4,6 +4,10 @@ A fully agentic AI system where two LLM agents collaborate iteratively:
 - **Agent A (Coder)**: Writes Python code based on your requirement, then refines it
 - **Agent B (Debugger)**: Reviews Agent A's code for bugs, edge cases, security issues, and quality
 
+<img width="2872" height="1791" alt="image" src="https://github.com/user-attachments/assets/ccdf70fa-3dbc-4729-9a39-08216483dd39" />
+
+
+
 **Powered by Groq (100% free, no credit card required)** using Llama 3.3 70B.
 
 ---
