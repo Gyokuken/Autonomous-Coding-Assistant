@@ -1,0 +1,7 @@
+# Sandbox image for the "basic" profile: Python stdlib + pytest only.
+# Built as `dualcore-sandbox:basic` (see scripts/build_sandbox_images.py).
+FROM python:3.12-slim
+
+RUN pip install --no-cache-dir "pytest>=8.0.0" "pytest-json-report>=1.5.0"
+
+WORKDIR /work

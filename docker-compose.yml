@@ -1,0 +1,27 @@
+# Production-ish compose: runs the app in a container that launches hardened
+# sandbox containers on the HOST Docker daemon (via the mounted socket).
+#
+# Prerequisites:
+#   1. Docker running.
+#   2. Sandbox images built on the host:  python scripts/build_sandbox_images.py
+#   3. GROQ_API_KEY available (compose reads it from your shell or a .env file).
+#
+# Security note: mounting the Docker socket gives this container control of the
+# host Docker daemon (effectively host root). That is acceptable for a personal
+# deployment of a code-runner, but for a hostile multi-tenant setup use a
+# socket-proxy or rootless Docker instead.
+
+services:
+  app:
+    build: .
+    image: dualcore-app
+    ports:
+      - "8000:8000"
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY:?set GROQ_API_KEY in your environment or .env}
+      SANDBOX: docker
+      EXEC_TIMEOUT: "30"
+      MEM_LIMIT_MB: "512"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
