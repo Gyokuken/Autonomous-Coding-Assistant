@@ -12,7 +12,7 @@ demos, the reviewer doesn't just *opine*, it **runs the code**.
   it runs out of rounds), then Agent B writes a final review.
 
 
-<img width="2872" height="1791" alt="image" src="https://github.com/user-attachments/assets/ccdf70fa-3dbc-4729-9a39-08216483dd39" />
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/c62e9a1d-8531-4fe4-846c-4d005429a4b5" />
 
 
 The result is code that has been *executed and tested*, not just eyeballed by a
